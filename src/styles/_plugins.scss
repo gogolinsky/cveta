@@ -1,0 +1,160 @@
+@import "slim-select/dist/slimselect";
+@import "minibarjs/src/minibar";
+// @import 'jquery-ui/themes/base/theme.css';
+@import url("jquery.fancybox.min.css");
+
+/* slimselect */
+.select {
+  padding-left: 0 !important;
+}
+.ss-single-selected {
+  height: 100% !important;
+  color: $black !important;
+  border: 1px solid#CCD1DD;
+  border-radius: 5px;
+  font-weight: $semibold;
+  font-family: $gilroy;
+  font-size: 15px;
+  padding-left: 24px !important;
+  .placeholder,
+  .placeholder .ss-disabled {
+    cursor: pointer !important;
+    color: $black !important;
+    font-size: 15px;
+    font-weight: $semibold;
+    line-height: 1;
+  }
+
+  &.ss-open-below {
+    position: relative;
+    background-color: $white !important;
+    z-index: $layer-10;
+    box-shadow: none;
+  }
+
+  .ss-arrow {
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 6px);
+
+    span {
+      margin: 2px 0 0 !important;
+      padding: 0 !important;
+      width: 9px;
+      height: 4px;
+      background-image: url("/img/arrow-select.svg") !important;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      border: none !important;
+      transform: rotate(0deg) !important;
+
+      &.arrow-up {
+        transform: rotate(180deg) !important;
+      }
+    }
+  }
+}
+
+.ss-content {
+  left: 0;
+  top: calc(100% + 10px);
+  width: 100%;
+  padding: 0 !important;
+  background-color: $white !important;
+  border: 1px solid #dde5e6 !important;
+  border-radius: 5px;
+  box-shadow: 0px 4px 30px rgba(7, 26, 68, 0.16);
+  overflow: visible !important;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 16px;
+    bottom: 100%;
+    border: 9px solid $white;
+    border-left: 8.5px solid transparent;
+    border-right: 8.5px solid transparent;
+    border-top: none;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 16px;
+    bottom: 100%;
+    border: 9px solid #717171;
+    border-left: 8.5px solid transparent;
+    border-right: 8.5px solid transparent;
+    border-top: none;
+  }
+  .ss-option {
+    padding: 8px 16px !important;
+    color: #5b6365;
+    font-size: 16px;
+    transition: ease color 300ms;
+  }
+
+  .ss-option:hover,
+  .ss-option.ss-highlighted {
+    color: $accent !important;
+    background-color: transparent !important;
+  }
+
+  .ss-option.ss-disabled {
+    color: #366099 !important;
+    background-color: transparent !important;
+  }
+}
+
+.ss-list {
+  margin: 5px 0;
+}
+
+/* minibar */
+.mb-container {
+  overflow: hidden !important;
+}
+
+.mb-content {
+  max-height: inherit;
+  overflow: visible;
+}
+
+.mb-track-x,
+.mb-track-y {
+  background-color: transparent;
+}
+
+.mb-track-x .mb-bar {
+  height: 4px;
+  background: #dde5e6;
+  border-radius: 2px;
+}
+
+.mb-track-y .mb-bar {
+  width: 4px;
+  background: #dde5e6;
+  border-radius: 2px;
+}
+
+.js-picker {
+  background-color: #eff6fb;
+}
+// .fancybox-container {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   height: 100vh;
+//   z-index: 999;
+//   background: #dde5e6;
+// }
+.fancybox-button--zoom {
+  display: none  !important;
+}
+.fancybox-button--play {
+  display: none !important;
+}
+.fancybox-button--thumbs {
+  display: none !important;
+}

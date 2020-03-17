@@ -1,0 +1,62 @@
+//- stages
+
+include /components/services/services
+include /components/news/news
+include /components/arrow/arrow
+
+mixin stages(options = {})
+  .stages
+    .stages__body
+      h2.stages__headline Как мы работаем
+      p.stages__text Последовательность выполнения заказа
+      +button({
+        label: 'Заказать интсрукцию',
+      })(
+        class="is-yellow is-wide"
+      )
+    .stages__slider
+      .stages.js-stages
+        .stages__inner
+          .stages__container.js-stages-container
+            .stages__wrapper.js-stages-wrapper
+              .stages__item.js-stages-item
+                .stages__img.js-stages-img
+                  img(src="img/stage-slider.png", alt="")
+                .stages__description
+                  p.stages__number 01
+                  h3.stages__title Консультация
+                  p.stages__subtite Проводим консультацию, непосредственно в самом магазине. Производим подбор и расчет оптимального продукта.
+              .stages__item.js-stages-item
+                .stages__img
+                  img(src="img/stage-slider.png", alt="")
+                .stages__description
+                  p.stages__number 02
+                  h3.stages__title Выбор цвета
+                  p.stages__subtite Проводим консультацию, непосредственно в самом магазине. Производим подбор и расчет оптимального продукта.
+              .stages__item.js-stages-item
+                .stages__img
+                  img(src="img/stage-slider.png", alt="")
+                .stages__description
+                  p.stages__number 03
+                  h3.stages__title Покраска
+                  p.stages__subtite Проводим консультацию, непосредственно в самом магазине. Производим подбор и расчет оптимального продукта.
+              .stages__item.js-stages-item
+                .stages__img
+                  img(src="img/stage-slider.png", alt="")
+                .stages__description
+                  p.stages__number 04
+                  h3.stages__title Всё!
+                  p.stages__subtite Проводим консультацию, непосредственно в самом магазине. Производим подбор и расчет оптимального продукта.
+            .stages__pagination
+            svg(
+            class="stages__progress"
+            viewBox="0 0 470 574"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            )
+              path(
+                opacity="1" 
+                class="circle js-stages-progress" 
+                d="M1 70.198C50.7852 27.675 115.394 2 186 2C343.401 2 471 129.599 471 287C471 444.401 343.401 572 186 572C115.394 572 50.7852 546.325 1 503.802" 
+                stroke="#6B83DA" 
+                stroke-width="3")

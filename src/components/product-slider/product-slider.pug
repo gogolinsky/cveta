@@ -1,0 +1,26 @@
+//- product-slider
+
+include /components/arrow/arrow
+
+mixin product-slider(options = {})
+  .product-slider.js-product-slider
+    .product-slider__inner
+      .product-slider__container.js-product-slider-container
+        .product-slider__wrapper.js-product-slider-wrapper  
+          each item in options.items
+            .product-slider__image.js-product-slider-image
+              img(src="img/" + item.img, alt="")
+      .product-slider__control
+        +arrow({
+          className:'product-slider-prev is-reverse',
+        })
+        +arrow({
+          className:'product-slider-next',
+        })
+      .product-slider__list.js-product-slider-thumbnails
+        ul.product-slider__wrapper.js-product-slider-wrapper.is-roll
+          each item in options.items
+            li.product-slider__item.js-product-slider-item
+              img(src="img/" + item.img, alt="")
+
+

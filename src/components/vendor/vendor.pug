@@ -1,0 +1,10 @@
+//- vendor
+
+mixin vendor(options = {})
+  a(href=options.url).vendor__link
+    if options.badge
+      p.vendor__badge=options.badge
+    img(src="img/" + options.img, alt="").vendor
+    if options.caption
+      p.vendor__caption=options.caption
+    

@@ -1,0 +1,35 @@
+//- employee
+
+include /components/button/button
+
+mixin employee(options = {})
+  .employee(
+    class=options.className
+  )
+    .employee__header
+      img(src="img/" + options.img, alt="").employee__img
+    .employee__body
+      if options.employeeBig
+        p.employee__position Колорист
+
+      .employee__name=options.name
+      .employee__description=options.description
+      if options.employeeBig
+        p.employee__description-big Татьяна - специалист магазина "Мастерская цвета. КРАСКИ".
+        p.employee__description-big Татьяна окончила Смоленский строительный техникум.  По образованию техник-Строитель промышленных и гражданских зданий и даже маляр-штукатур  третьего разряда. В 2002 году начала  работать по продаже красок и колеровке в магазине "МАСТЕР", а декоративными штукатурками  начала заниматься в 2006. Специалисту с таким огромным опытом работы можно доверять безоговорочно.
+        p.employee__description-big Наблюдая за тем как Татьяна работает с клиентами в магазине, можно сказать, что работа действительно в радость. Здорово, когда человек занимается любимым делом!
+        .employee__button
+          +button({
+            label: 'Вернуться назад',
+          })(
+            class="is-bordered"
+            data-modal-close
+          )
+      .employee__link
+        +button({
+          label: 'Подробнее',
+        })(
+          class="is-callback"
+          data-modal="employee"
+        )
+    .employee__shadow

@@ -1,0 +1,37 @@
+/**
+* guarantees
+*/
+
+.guarantees {
+  $this: &;
+  margin-top: 100px;
+  width: 100%;
+  padding: 88px 100px;
+  border-radius: 5px;
+  padding-bottom: 0;
+  background-image: url("/img/print-1.svg");
+  background-position: 100% 20px;
+  background-repeat: no-repeat;
+  background-color: #eff6fb;
+  &__header {
+    text-align: center;
+    margin-bottom: 68px;
+  }
+  &__caption {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: $gilroy;
+    font-weight: $semibold;
+    color: #163993;
+  }
+
+  &__headline {
+    font-size: 34px;
+    font-family: $gilroy;
+  }
+  &__text {
+    margin-top: 95px;
+    margin-bottom: 120px;
+  }
+}

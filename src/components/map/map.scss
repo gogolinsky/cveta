@@ -1,0 +1,47 @@
+/**
+* map
+*/
+
+.map {
+  $this: &;
+
+  height: 450px;
+  position: relative;
+  padding: 0;
+  z-index: 0;
+  margin-bottom: 47px;
+  &__container {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    background-color: #eee;
+
+    &::after {
+      background-color: #88a5de;
+      mix-blend-mode: color;
+      opacity: 0.4;
+    }
+  }
+
+  &__block {
+    width: 400px;
+    height: 390px;
+    border-radius: 5px;
+    background: rgba(22, 57, 147, 0.9);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__headline {
+    font-size: 34px;
+    font-family: $gilroy;
+    font-weight: $semibold;
+    color: $white; 
+  }
+  &__contacts {
+  }
+} 

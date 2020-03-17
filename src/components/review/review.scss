@@ -1,0 +1,51 @@
+/**
+* review
+*/
+
+.review {
+  $this: &;
+  display: flex;
+  background-color: $white;
+  justify-content: space-between;
+  width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  &__body {
+    padding: 80px 15px 46px 40px;
+    width: 50%;
+    font-family: $corsa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 172%;
+    color: $dark;
+    margin: 0;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 32px;
+      height: 23px;
+      background-image: url('/img/quotes.svg');
+      top: -39px;
+    }
+  }
+  &__position {
+    margin: 0;
+    color: $text;
+    font-size: 14px;
+  }
+  &__name {
+    margin: 0;
+    font-family: $gilroy;
+    font-weight: $semibold;
+    color: $black;
+    font-size: 17px;
+  }
+  &__img {
+  }
+
+}

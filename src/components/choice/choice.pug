@@ -1,0 +1,10 @@
+//- choice
+
+mixin choice(options = {})
+  ul.choice
+    each item in options.items
+      li.choice__item
+        a(href=item.url).choice__link
+          img(src="img/" + item.img, alt=item.title).choice__img
+          h4.choice__title=item.title
+

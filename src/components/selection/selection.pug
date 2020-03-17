@@ -1,0 +1,28 @@
+//- selection
+
+include /components/input/input
+
+mixin selection(options = {})
+  .selection.js-selection
+    p.selection__title Фильтровать товары
+    img(src="img/arrow-select.svg", alt="").selection__arrow.js-selection-arrow
+  .selection__drop.js-selection-drop
+    .selection__header
+      p.selection__title Производитель
+      button.selection__button.js-selection-reset(
+        type="reset"
+      ) × Сбросить
+    .selection__body
+      each item in options.items
+        +checkbox(item)(
+          name=item.label
+          value=item.label
+          id=item.label
+        )
+    .selection__footer
+      +button({
+        label: 'Применить',
+      })(
+        class="is-wide is-selection js-selection-button"
+        type="button"
+      )

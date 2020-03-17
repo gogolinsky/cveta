@@ -1,0 +1,27 @@
+//- jump
+
+include /components/button/button
+
+mixin jump(options = {})
+  .jump
+    if options.next
+      +button({
+        label: '←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Назад в портфолио',
+        type: 'link',
+      })(
+        class="is-bordered is-dis"
+      )
+      +button({
+        label: 'Следующий проект&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→',
+        type: 'link',
+      })(
+        class="is-bordered is-promo"
+      )
+    if options.back
+      .jump__centered
+        +button({
+          label: '←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Назад в портфолио',
+          type: 'link',
+        })(
+          class="is-bordered "
+        )

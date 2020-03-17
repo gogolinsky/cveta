@@ -1,0 +1,18 @@
+//- about
+
+mixin about(options = {})
+  .about
+    .about__left
+      h2.about__headline=options.headline
+      p.about__text «Мастерские цвета Dulux» – это фирменные магазины, в которых вы найдете ответы на все вопросы о краске и штукатурке.
+      p.about__text  Внимательно подходим к эксплуатации, интерьеру, практичности и другим тонкостям заказчика. Исходим только из задач клиента.
+      img(src="img/forall.png", alt="")
+      .about__button
+        +button({
+          label: 'Подробнее о нас',
+          type: 'link',
+        })(
+          class="is-callback fz-16"
+          href="/about.html"
+        )
+    img(src="img/about.png", alt="").about__img 

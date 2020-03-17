@@ -1,0 +1,114 @@
+/* Grid
+----------------------------- */
+
+/* prettier-ignore */
+
+.container {
+  @if $isResponsive {
+    width: 100%;
+    min-width: $minwidth;
+    max-width: $maxwidth + $gap;
+  } @else {
+    width: $maxwidth + $gap;
+  }
+
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gap / 2;
+  padding-right: $gap / 2;
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+
+  &.is-row {
+    margin: 0 $gap / -2;
+
+    & > [class*='col-'] {
+      padding-left: $gap / 2;
+      padding-right: $gap / 2;
+    }
+  }
+
+  &.is-columns {
+    margin: $gap / -2px;
+
+    & > [class*='col-'] {
+      padding: $gap / 2px;
+    }
+  }
+
+  &.is-columns.is-wide {
+    margin: -10px -15px;
+
+    & > [class*='col-'] {
+      padding: 10px 15px;
+    }
+  }
+
+  &.is-columns.is-narrow {
+    margin: -10px;
+
+    & > [class*='col-'] {
+      padding: 10px;
+    }
+  }
+
+  &.is-column {
+    flex-direction: column;
+  }
+
+  &.is-fit {
+    justify-content: space-between;
+  }
+
+  &.is-around {
+    justify-content: space-around;
+  }
+
+  &.is-end {
+    justify-content: flex-end;
+  }
+
+  &.is-center {
+    justify-content: center;
+  }
+
+  &.is-nowrap {
+    flex-flow: row nowrap;
+  }
+
+  &.is-middle {
+    align-items: center;
+  }
+
+  &.is-top {
+    align-items: flex-start;
+  }
+
+  &.is-bottom {
+    align-items: flex-end;
+  }
+
+  &__item {
+    display: block;
+    float: left;
+    flex: 0 0 auto;
+
+    &.is-grow {
+      flex-grow: 1;
+    }
+
+    &.is-shrink {
+      flex-shrink: 1;
+    }
+  }
+}
+
+@include order(5, $breakpoints);
+@include shift($breakpoints);
+@include unshift($breakpoints);
+@include cols($breakpoints);
+@include visibility($breakpoints);
+@include aligns($breakpoints);

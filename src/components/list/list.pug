@@ -1,0 +1,11 @@
+//- list
+
+mixin list(options = {})
+  .list
+    each item in options.items
+      .list__row
+        .list__volume
+          p.list__tin=item.volume
+          p.list__cost=item.cost
+        p.list__quantity=item.quantity
+          

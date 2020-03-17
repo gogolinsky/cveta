@@ -1,0 +1,162 @@
+//- product-card
+
+include /components/breadcrumb/breadcrumb
+include /components/button/button
+include /components/input/input
+include /components/features/features
+include /components/total/total
+include /components/form/form
+include /components/product-slider/product-slider
+include /components/vendor/vendor
+
+mixin product-card(options = {})
+  .product-card
+    case options.type
+      when 'paints'
+        .product-card__paints
+          .product-card__choice.js-picker
+            .product-card__badge
+              +vendor({img:'dulux.png'})
+              button.product-card__button(
+                data-modal="colorPicker"
+              ) Выбрать другой цвет
+                .product-card__button-picker.js-picker
+            img(src="/img/table.png", alt="").product-card__cover
+          .product-card__info
+            +breadcrumb(options.breadcrumb)
+            h2.product-card__name=options.name
+            p.product-card__description=options.description
+            .product-card__specifications
+              .product-card__img
+                img(src="img/big-product.jpg", alt="")
+                .product-card__total
+                  +total
+              .product-card__features
+                .product-card__vendor
+                  .product-card__company
+                    p.product-card__manufacturer Производитель
+                    +button({
+                      label: 'Dulux',
+                      type: 'link',
+                    })(
+                      class="is-callback"
+                    )
+                  .product-card__logo
+                    img(src="img/vendor-brand.png", alt="")
+                +form({
+                  type: 'product-paints',
+                  className:'product-paints',
+                })
+        .product-card__caption
+          .container
+            .grid.is-row
+              .col-6  
+                .text
+                  p Для внутренних работ. Подходит для окрашивания новых и ранее покрытых краской деревянных поверхностей, например оконных рам, мебели, дверей, откосов, пригодна для окрашивания загрунтованных металлических поверхностей, в частности, радиаторов отопления.
+              .col-6
+                +features({
+                  items: [
+                    {
+                      img: 'feature-1.svg',
+                      title: 'Полуглянцевое',
+                      subtitle: 'Покрытие:', 
+                    },
+                    {
+                      img: 'feature-2.svg',
+                      title: '16 м²/л (2 слоя)',
+                      subtitle: 'Расход:', 
+                    },
+                    {
+                      img: 'feature-3.svg',
+                      title: 'Устойчива к мытью',
+                      subtitle: 'Износостойкость:', 
+                    },
+                    {
+                      img: 'feature-4.svg',
+                      title: '2-4 часа',
+                      subtitle: 'Время высыхания:', 
+                    },
+                  ],
+                })
+
+      when 'enamel'
+        .container
+          .grid.is-row
+            .col-6
+              +product-slider(options)
+            .col-6
+              .product-card__info
+                +breadcrumb(options.breadcrumb)
+                h2.product-card__name=options.name
+                p.product-card__description=options.description
+                .product-card__features
+                  .product-card__vendor
+                    .product-card__company
+                      p.product-card__manufacturer Производитель
+                      +button({
+                        label: 'Dulux',
+                        type: 'link',
+                      })(
+                        class="is-callback"
+                      )
+                    .product-card__logo
+                      img(src="img/vendor-brand.png", alt="")
+                +form({
+                  type: 'form-ename',
+                  className:'form-ename', 
+                })
+            .col-6  
+              .text
+                p Для внутренних работ. Подходит для окрашивания новых и ранее покрытых краской деревянных поверхностей, например оконных рам, мебели, дверей, откосов, пригодна для окрашивания загрунтованных металлических поверхностей, в частности, радиаторов отопления.
+            .col-6
+              +features({
+                items: [
+                  {
+                    img: 'feature-1.svg',
+                    title: 'Полуглянцевое',
+                    subtitle: 'Покрытие:', 
+                  },
+                  {
+                    img: 'feature-2.svg',
+                    title: '16 м²/л (2 слоя)',
+                    subtitle: 'Расход:', 
+                  },
+                  {
+                    img: 'feature-3.svg',
+                    title: 'Устойчива к мытью',
+                    subtitle: 'Износостойкость:', 
+                  },
+                  {
+                    img: 'feature-4.svg',
+                    title: '2-4 часа',
+                    subtitle: 'Время высыхания:', 
+                  },
+                ],
+              })
+              
+      when 'other'
+        .container
+          .grid.is-row
+            .col-6
+              +product-slider(options)
+            .col-6
+              .product-card__info
+                +breadcrumb(options.breadcrumb)
+                h2.product-card__name=options.name
+                p.product-card__description=options.description
+                .product-card__features
+                  .product-card__vendor
+                    .product-card__company
+                      p.product-card__manufacturer Производитель
+                      +button({
+                        label: 'Dulux',
+                        type: 'link',
+                      })(
+                        class="is-callback"
+                      )
+                    .product-card__logo
+                      img(src="img/vendor-brand.png", alt="")
+                +form({
+                  type: 'form-other',
+                  className:'form-other', 
+                })

@@ -1,0 +1,11 @@
+//- review
+
+mixin review(options = {})
+  .grid
+    .review
+      .review__body
+        p.review__text=options.text
+        .review__people
+          p.review__position=options.position
+          p.review__name=options.name
+      img(src="img/" + options.img, alt=options.name).review__img

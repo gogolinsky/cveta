@@ -1,0 +1,9 @@
+//- description
+
+include /components/breadcrumb/breadcrumb
+
+mixin description(options = {})
+  .description
+    +breadcrumb(options.breadcrumb)
+    h2.description__title=options.title
+    p.description__subtitle=options.subtitle

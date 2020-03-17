@@ -1,0 +1,48 @@
+//- footer
+
+include /components/dc/dc
+include /components/contacts/contacts
+include /components/social/social
+include /components/footer-nav/footer-nav
+
+mixin footer(params)
+  .footer
+    .container
+      .footer__top
+        .footer__contacts
+          .footer__logo
+            p.logo__name Мастерская Цвета
+            span.logo__caption салон-студия красок
+          .footer__contact
+            +contacts({
+              className: 'is-footer',
+            })
+          .footer__social
+            +social({
+              className: 'is-footer',
+              items: [
+                { name: 'vk', url: '#' },
+                { name: 'facebook', url: '#' },
+                { name: 'instagram', url: '#'},
+              ]
+            })
+        .footer__menu
+          +footer-nav({
+            items:[
+              {link:'Каталог'},
+              {link:'Подбор материала'},
+              {link:'Акции'},
+              {link:'Услуги'},
+              {link:'Портфолио'},
+              {link:'Блог'},
+              {link:'О нас'},
+              {link:'Контакты'},
+            ],
+          })
+      .footer__bottom
+        .footer_c
+          p.footer__copy © 2019 «Мастерская цвета» Смоленск
+          a(href="").footer__policy Политика конфиденциальности
+        .footer__dc
+          +dc
+      

@@ -1,0 +1,253 @@
+@mixin title($font-size) {
+  margin: 0;
+  color: $black;
+  font-weight: $bold;
+  font-size: $font-size;
+  line-height: 1.2;
+}
+
+@mixin shift($breakpoints) {
+
+  @for $i from 0 through 12 {
+    .shift-#{$i} {
+      margin-left: 100% / 12 * $i;
+      padding-left: $gap / 4;
+      padding-right: $gap / 4;
+    }
+  }
+
+  @if $isResponsive == true {
+
+    @each $label, $point in $breakpoints {
+
+      @media (max-width: $point) {
+
+        @for $i from 0 through 12 {
+          .shift-#{$label}-#{$i} {
+            margin-left: 100% / 12 * $i;
+            padding-left: $gap / 4;
+            padding-right: $gap / 4;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin unshift($breakpoints) {
+
+  @for $i from 0 through 12 {
+    .unshift-#{$i} {
+      margin-left: 100% / 12 * -$i;
+      padding-left: $gap / 4;
+      padding-right: $gap / 4;
+    }
+  }
+
+  @if $isResponsive == true {
+
+    @each $label, $point in $breakpoints {
+
+      @media (max-width: $point) {
+
+        @for $i from 0 through 12 {
+          .unshift-#{$label}-#{$i} {
+            margin-left: 100% / 12 * -$i;
+            padding-left: $gap / 4;
+            padding-right: $gap / 4;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin order($amount, $breakpoints) {
+
+  @for $i from 0 through $amount {
+    .order-#{$i} {
+      order: $i;
+    }
+  }
+
+  @if $isResponsive == true {
+
+    @each $label, $point in $breakpoints {
+
+      @media (max-width: $point) {
+
+        @for $i from 0 through $amount {
+          .order-#{$label}-#{$i} {
+            order: $i;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin visibility($breakpoints) {
+  .is-hide {
+    display: none;
+  }
+
+  .is-show {
+    display: block;
+  }
+
+  @if $isResponsive == true {
+
+    @each $label, $point in $breakpoints {
+
+      @media (max-width: $point) {
+        .is-#{$label}-hide {
+          display: none;
+        }
+
+        .is-#{$label}-show {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@mixin aligns($breakpoints) {
+  .is-align-left {
+    text-align: left !important;
+  }
+
+  .is-align-center {
+    text-align: center !important;
+  }
+
+  .is-align-right {
+    text-align: right !important;
+  }
+
+  @each $label, $point in $breakpoints {
+
+    @media (max-width: $point) {
+      .is-#{$label}-align-left {
+        text-align: left !important;
+      }
+
+      .is-#{$label}-align-center {
+        text-align: center !important;
+      }
+
+      .is-#{$label}-align-right {
+        text-align: right !important;
+      }
+    }
+  }
+}
+
+@mixin cols($breakpoints) {
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: 100% / 12 * $i;
+    }
+
+    @if $i <= 10 {
+      .col-#{$i}0p {
+        width: 100% / 10 * $i;
+      }
+    }
+  }
+
+  @if $isResponsive == true {
+
+    @each $label, $point in $breakpoints {
+
+      @media (max-width: $point) {
+
+        @for $i from 1 through 12 {
+          .col-#{$label}-#{$i} {
+            width: 100% / 12 * $i;
+          }
+
+          @if $i <= 10 {
+            .col-#{$label}-#{$i}0p {
+              width: 100% / 10 * $i;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* stylelint-disable */
+@mixin grid() {
+  :root {
+    --offset: 1.5rem;
+    --max_width: 1170px;
+    --columns: 12;
+    --gutter: 30px;
+    --baseline: 20px;
+    --baseline-shift: 0;
+    --line-thickness: 1px;
+    --color: hsla(0, 79%, 72%, 0.1);
+    --color2: hsla(0, 100%, 70%, 0.1);
+
+    --repeating-width: calc(100% / var(--columns));
+    --column-width: calc((100% / var(--columns)) - var(--gutter));
+    --background-width: calc(100% + var(--gutter));
+
+    --background-columns: repeating-linear-gradient(
+      to right,
+      var(--color),
+      var(--color) var(--line-thickness),
+      transparent var(--line-thickness),
+      transparent calc(var(--column-width) - var(--line-thickness)),
+      var(--color) calc(var(--column-width) - var(--line-thickness)),
+      var(--color) var(--column-width),
+      transparent var(--column-width),
+      transparent var(--repeating-width)
+    );
+
+    --background-baseline: repeating-linear-gradient(
+      to bottom,
+      var(--color2),
+      var(--color2) 1px,
+      transparent 1px,
+      transparent var(--baseline)
+    );
+  }
+
+  .html {
+    position: relative;
+    height: auto;
+  }
+
+  .html::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    /* width: calc(100% - (2 * var(--offset))); */
+
+    /* max-width: var(--max_width); */
+    width: var(--max_width);
+    min-height: 100vh;
+    background-image: var(--background-columns);
+
+    /* background-image: var(--background-columns), var(--background-baseline); */
+    background-size: var(--background-width) 100%;
+    background-position: 0 var(--baseline-shift);
+    z-index: 1000;
+    pointer-events: none;
+  }
+}
+
+@if $hasGuides {
+  @include grid();
+}

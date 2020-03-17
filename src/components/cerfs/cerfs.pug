@@ -1,0 +1,9 @@
+//- cerfs
+
+include /components/cerf/cerf
+
+mixin cerfs(options = {})
+  ul.cerfs
+    each item in options.items
+      li.cerfs__item
+        +cerf(item)

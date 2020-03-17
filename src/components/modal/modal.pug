@@ -1,0 +1,102 @@
+//- modal
+
+include /components/form/form
+include /components/employee/employee
+include /components/color-picker/color-picker
+
+
+
+mixin modal-default()
+  #modal.js-modal-default
+
+mixin modal-callback()
+  #modal-callback
+    .modal__col
+      .modal__background
+        .modal__img
+          img(src="img/table.png", alt="")
+    .modal__form
+      +form({
+        type: 'callback',
+        className: 'in-modal'
+      })
+    
+mixin modal-order()
+  #modal-order
+    .modal__col
+      .modal__background
+        .modal__img
+          img(src="img/table.png", alt="")
+    .modal__form
+      +form({
+        type: 'order',
+        className: 'in-modal'
+      })
+
+mixin modal-employee()
+  #modal-employee
+    .container
+      .modal__employee
+        +employee({
+          className: 'employee-big',
+          position: 'Колорист',
+          img: 'employee-2.jpg',
+          name:'Наталия Штырхунова', 
+          description: 'Главный человек по колеровке в салоне. Более 17 лет занимается своим любимым делом. ',
+          employeeBig: true,
+        })
+
+mixin modal-template()
+  .modal.js-modal
+    .modal__template.js-modal-template
+      .modal__inner.js-modal-inner
+        button.modal__close(
+          data-modal-close
+          title='Закрыть'
+        )
+        .modal__header.js-modal-header
+        .modal__content.js-modal-content
+            
+mixin modal-colorPicker()
+  #modal-colorPicker
+    .container
+       +color-picker({
+        items: [
+           {color: '#e5ebd5',},
+           {color: '#e3ecce',},
+           {color: '#d4e6b6',},
+           {color: '#c5de9e',},
+           {color: '#b2cf89',},
+           {color: '#a1c777',},
+           {color: '#5ccf68',},
+           {color: '#53be57',},
+           {color: '#46ac5f',},
+           {color: '#0c9856',},
+           {color: '#1a833e',},
+           {color: '#23693b',},
+         ],
+        colors: [
+          {colors: '#e5e8f0',},
+          {colors: '#f15a24',},
+          {colors: '#f15a24',},
+          {colors: '#d4e6b6',},
+          {colors: '#ffff00',},
+          {colors: '#d9e021',},
+          {colors: '#0c9856',},
+          {colors: '#29abe2',},
+          {colors: '#3838e2',},
+          {colors: '#662d91',},
+          {colors: '#ed1e79',},
+          {colors: '#de2828',},
+        ],
+       })
+
+
+mixin modal()
+  +modal-template()
+  .modal__cols
+    +modal-callback()
+    +modal-order()
+    +modal-employee()
+    +modal-colorPicker()
+          

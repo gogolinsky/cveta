@@ -1,0 +1,73 @@
+$accent: #163993;
+$second: #ffeac1;
+$black: #1f3744;
+$dark: #3c445d;
+$grey: #717999;
+$white: #ffffff;
+$green: #50c4a1;
+$cyan: #1b47b6;
+$text: #656f86;
+$yellow: #FFB932;
+
+$isResponsive: false;
+$hasGuides: false;
+
+$font-size: 16px;
+$font-sizes: (
+  1: 52px,
+  2: 40px,
+  3: 28px,
+  4: 20px,
+  5: 20px,
+  6: 20px
+);
+
+$font-family: 'Roboto', sans-serif;
+$corsa:'Corsa Grotesk';
+$gilroy: 'Gilroy';
+$line-height: 1.68;
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$heavy: 800;
+
+$lg: 1599px;
+$xl: 1439px;
+$l: 1179px;
+$md: 959px;
+$m: 767px;
+$s: 559px;
+$xs: 320px;
+
+$breakpoints: (
+  'lg': $lg,
+  'xl': $xl,
+  'l': $l,
+  'md': $md,
+  'm': $m,
+  's': $s,
+  'xs': $xs
+);
+
+$gap: 30px;
+$width: 100%;
+$minwidth: 320px;
+$maxwidth: 1170px;
+$maxwidth2: 1680px;
+
+$layer-1: 100;
+$layer-2: 200;
+$layer-3: 300;
+$layer-4: 400;
+$layer-5: 500;
+$layer-6: 600;
+$layer-7: 700;
+$layer-8: 800;
+$layer-9: 900;
+$layer-9: 900;
+$layer-10: 1000;
+
+$ease: cubic-bezier(0.455, 0.03, 0.515, 0.955);

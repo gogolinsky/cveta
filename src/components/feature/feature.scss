@@ -1,0 +1,35 @@
+/**
+* feature
+*/
+
+.feature {
+  display: flex;
+  align-items: center;
+  width: 220px;
+  $this: &;
+  &__img {
+    width: 44px;
+    height: 44px;
+    border: 1px solid $yellow;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+  }
+  &__subtitle {
+    margin: 0;
+    font-size: 14px;
+    font-family: $corsa;
+    color: $text;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 17px;
+    font-family: $gilroy;
+    color: $black;
+    font-weight: $semibold;
+  }
+
+}

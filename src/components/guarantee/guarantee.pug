@@ -1,0 +1,11 @@
+//- guarantee
+
+mixin guarantee(options = {})
+  ul.guarantee
+    each item in options.items
+      li.guarantee__item
+        .guarantee__img
+          img(src="img/" + item.img, alt="")
+        .guarantee__text
+          h4.guarantee__title=item.title
+          p.guarantee__subtitle=item.subtitle

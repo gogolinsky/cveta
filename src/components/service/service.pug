@@ -1,0 +1,19 @@
+//- service
+
+mixin service(options = {})
+  .service(
+    class=options.className
+  )
+    img.service__img(src="img/"+options.img, alt=options.text)
+    a(href=options.link)
+      .service__badge
+        p.service__title=options.text
+        .service__link
+          +button({
+            label: 'Подробнее',
+            type: 'link',
+          })(
+            class="is-callback"
+            href=options.link
+            )
+      

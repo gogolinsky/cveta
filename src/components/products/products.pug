@@ -1,0 +1,19 @@
+//- products
+
+include /components/product/product
+include /components/pagination/pagination
+include /components/filter/filter
+
+mixin products(options = {})
+  if options.filter
+    +filter
+  
+  .products__loader.js-products-loader
+    img(src="img/loader.gif", alt="")
+  .products#products
+    ul.products__list.grid.is-row
+      each item in options.items
+        li.products__item.col-3
+          +product(item)
+    if options.pagination
+      +pagination(options.pagination)

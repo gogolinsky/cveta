@@ -1,0 +1,86 @@
+/**
+* roll
+*/
+
+.roll {
+  $this: &;
+  
+  &__list {
+    overflow: hidden;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__item {
+    background-position: center ;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    transition: ease opacity 300ms;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+    width: 1000%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  &__headline {
+    font-family: $gilroy;
+    font-size: 34px;
+    color: $black;
+  }
+
+  &__text {
+    font-family: $corsa;
+    font-size: 18px;
+    color: $dark;
+    max-width: 478px;
+    line-height: 1.77;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  &__advantages {
+    margin-top: 139px;
+  }
+
+  .roll-button-next,.roll-button-prev {
+    width: 62px;
+    height: 62px;
+  }
+  .roll-button-prev {
+    transform: rotate(180deg);
+    margin-right: 30px;
+  }
+  
+}
+.swiper-button-disabled {
+  opacity: 0.4;
+  border: 1px solid #CCD1DD;
+  transition: ease all 300ms;
+  cursor: default;
+}
+.swiper-slide-active,.swiper-slide-next {
+  opacity: 1;
+}

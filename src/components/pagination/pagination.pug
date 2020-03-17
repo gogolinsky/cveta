@@ -1,0 +1,31 @@
+//- pagination
+
+include /components/arrow/arrow
+
+mixin pagination(options)
+  .pagination
+    ul.pagination__list
+
+      if options.prevArrow
+        li.pagination__item.is-prev
+          a.pagination__link(
+            href='#'
+          )
+
+      each page in options.pages
+
+        if page == options.currentPage
+          li.pagination__item.is-current
+            span.pagination__label=page
+        else
+          li.pagination__item
+            a.pagination__link(
+              href='#',
+              title='Страница ' + page
+            )=page
+
+      if options.nextArrow
+        li.pagination__item.is-next
+          a(href="#")
+            span Показать ещё
+            +arrow

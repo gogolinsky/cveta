@@ -1,0 +1,23 @@
+/**
+* arrow
+*/
+
+.arrow {
+  $this: &;
+  transition: ease all 300ms;
+  cursor: pointer;
+  outline: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ffb932;
+  border-radius: 50%;
+  background: none;
+  background-image: url("/img/roll-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 18px 19px;
+}
+
+.is-reverse {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,32 @@
+/**
+* vendor
+*/
+
+.vendor {
+  $this: &;
+
+  &__caption {
+    font-size: 13px;
+    line-height: 130%;
+    font-family: $corsa;
+    color: $text;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+  }
+  &__link {
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+  &__badge {
+    position: absolute;
+    top: -31px;
+    left: 9px;
+    margin: 0;
+    padding: 5px 11px;
+    background-color:  #38D99F;
+    color: $white;
+  }
+}

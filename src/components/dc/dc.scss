@@ -1,0 +1,35 @@
+/**
+* dc
+*/
+
+.dc {
+  $this: &;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-top: -4px;
+  &__caption {
+    margin: 0;
+    color: #9fb4ff;
+    font-size: 7px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  &__img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    img {
+      width: 100%;
+    }
+  }
+  &__name {
+    text-align: right;
+    margin: 0;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 16px;
+    margin-top: -2px;
+  }
+}

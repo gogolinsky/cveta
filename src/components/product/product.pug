@@ -1,0 +1,14 @@
+//- product
+
+mixin product(options = {})
+  article.product(
+    data-id=options.id
+  )
+    a(href=options.url)
+      img(src="img/" + options.img, alt=options.name).product__img 
+      h3.product__name=options.name
+      p.product__description=options.description
+      if options.order
+        p.product__order=options.order
+      else
+        p.product__order-empty Цену уточняйте

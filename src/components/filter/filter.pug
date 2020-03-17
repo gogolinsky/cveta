@@ -1,0 +1,30 @@
+//- filter
+
+include /components/input/input
+include /components/selection/selection
+
+mixin filter(options = {})
+  form.filter 
+    .filter__products
+      +selection({
+        items: [
+          {label:'Dulux'},
+          {label:'Tikkurila'},
+          {label:'Finncolor'},
+          {label:'Marshal'},
+          {label:'Dulux'},
+          {label:'Tikkurila'},
+          {label:'Finncolor'},
+          {label:'Marshal'},
+        ],
+      })
+    .filter__products
+      +select({
+        className: 'js-filter-order',
+        placeholder: 'Сначала дешёвые',
+        options: [
+          { label: 'Банка 1л', value: '1' },
+          { label: 'Банка 2л', value: '2' },
+        ]
+      })
+      

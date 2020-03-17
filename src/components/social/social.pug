@@ -1,0 +1,16 @@
+//- social
+
+mixin social(options = {})
+  ul.social(
+    class=options.className
+  )
+    each item in options.items             
+      li.social__item(
+        class='is-' + item.name
+      )           
+        a.social__link(
+          title=item.name
+          href=item.url
+          area-label=item.name
+          target='_blank'
+        )

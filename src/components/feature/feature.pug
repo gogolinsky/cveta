@@ -1,0 +1,9 @@
+//- feature
+
+mixin feature(options = {})
+  .feature
+    .feature__img
+      img(src="img/" + options.img, alt="")
+    .feature__description
+      p.feature__subtitle=options.subtitle
+      p.feature__title=options.title

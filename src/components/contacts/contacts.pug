@@ -1,0 +1,15 @@
+//- contact
+
+mixin contacts(options = {})
+  ul.contacts(
+    class=options.className
+  )
+    li.contacts__item
+      img.contacts__img.is-clock(src="/img/clock.svg", alt="")
+      p.contacts__caption Мы открыты
+    li.contacts__item
+      img.contacts__img.is-place(src="/img/place.svg", alt="")
+      p.contacts__caption Смоленск, пр-т Гагарина 7
+    li.contacts__item
+      img.contacts__img.is-phone(src="/img/phone.svg", alt="")
+      p.contacts__caption (4812) 63-37-37&nbsp;&nbsp;|&nbsp;&nbsp;(903) 649-37-37

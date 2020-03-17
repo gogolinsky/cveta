@@ -1,0 +1,132 @@
+/**
+* more
+*/
+
+.more {
+  $this: &;
+  margin-top: 65px !important;
+  &__subtitle {
+    font-size: 16px;
+    font-family: $gilroy;
+    color:#6B83DA;
+    font-weight: $semibold;
+    margin: 0;
+  }
+  &__title {
+    margin-top: 15px;
+    font-size: 34px;
+    font-family: $gilroy;
+  }
+  &__order {
+    margin-top: 44px;
+  }
+  &__caption {
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 1;
+    font-size: 14px;
+    font-family: $corsa;
+  }
+  &__cost {
+    margin: 0;
+    line-height: 1;
+    font-size: 26px;
+    color: $accent;
+    font-family: $gilroy;
+    font-weight: $semibold;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 45px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    font-family: $corsa;
+    font-size: 18px;
+    line-height: 182%;
+    & + & {
+      margin-top: 15px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      left: 0;
+      border: 1px solid #CCD1DD;
+      border-radius: 50%;
+      background-image: url('/img/check.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  &__table {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 66px;
+    margin-bottom: 20px;
+  }
+  &__headline {
+    font-size: 34px;
+    font-family: $gilroy;
+    color: $black;
+    font-weight: $semibold;
+    margin-bottom: 43px;
+  }
+
+  &__table-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 160px;
+    padding-top: 14px;
+    padding-bottom: 11px;
+    background-color: #EFF6FB;
+    &:nth-child(2n) {
+      background-color: $white;
+    }
+  }
+
+  &__table-col {
+      font-size: 20px;
+      font-family: $gilroy;
+      color: $dark;
+    &:nth-child(2n) {
+      color: $accent;
+      font-size: 20px;
+      font-weight: $semibold;
+      font-family: $gilroy;
+    }
+  }
+  &__description {
+    font-size: 18px;
+    line-height: 182%;
+    font-family: $corsa;
+    max-width: 540px;
+  }
+  &.is-case {
+    margin-top: -35px  !important;
+    margin-bottom: 52px;
+    .more__title {
+      font-size: 28px;
+    }
+    .more__list {
+      margin-top: 0;
+    }
+    .more__left {
+      width: 50%;
+    }
+    .more__right {
+      width: 50%;
+    }
+  }
+}

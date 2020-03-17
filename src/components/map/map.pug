@@ -1,0 +1,27 @@
+//- map
+
+include /components/contacts/contacts
+include /components/social/social
+
+mixin map(options = {})
+  .map.js-map(
+    data-options=options.map
+  )
+    .map__container.js-map-container
+    
+    .map__block
+      .map__info
+        .map__headline Наши контакты
+        .map__contacts
+          +contacts({
+            className: 'is-footer',
+          })
+      .map__social
+        +social({
+          className: 'is-footer',
+          items: [
+            { name: 'vk', url: '#' },
+            { name: 'facebook', url: '#' },
+            { name: 'instagram', url: '#'},
+          ]
+        })

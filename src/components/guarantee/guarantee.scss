@@ -1,0 +1,45 @@
+/**
+* guarantee
+*/
+
+.guarantee {
+  $this: &;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+
+  &__item {
+    width: 430px;
+    display: flex;
+    
+    & + & {
+      margin-bottom: 82px;
+    }
+  }
+  &__img {
+    width: 66px;
+  }
+
+  &__text {
+    margin-left: 31px;
+    display: flex;
+    flex-direction: column;
+    max-width: 334px;
+    font-family: $corsa;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-family: $gilroy;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 172%;
+    color: $dark;
+    margin: 0;
+    margin-top: 12px;
+  }
+}

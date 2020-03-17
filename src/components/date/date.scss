@@ -1,0 +1,27 @@
+/**
+* date
+*/
+
+.date {
+  $this: &;
+  display: flex;
+  margin-bottom: 60px;
+  margin-top: 82px;
+  &__description {
+    width: 50%;
+  }
+  &__subtitle {
+    font-size: 14px;
+    color: $text;
+    font-family: $corsa;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  &__title {
+    max-width: 500px;
+    font-size: 16px;
+    color: $black;
+    font-family: $corsa;
+    margin: 0;
+  }
+}

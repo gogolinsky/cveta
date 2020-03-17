@@ -1,0 +1,24 @@
+//- total
+
+include /components/list/list
+
+mixin total(options = {})
+  .total
+    sapn.total__span Вам понадобится:
+    p.total__volume ~ 10.75 <i>л/2 слоя</i>
+    .total__info
+      .total__list
+        +list({
+            items: [
+              {
+              volume: 'Банка 2л',
+              cost: '2 350 ₽',
+              quantity: '2 шт',
+              },
+              {
+              volume: 'Банка 1л',
+              cost: '1 150 ₽',
+              quantity: '4 шт',
+              }
+            ],
+          })

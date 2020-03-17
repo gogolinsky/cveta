@@ -1,0 +1,44 @@
+/**
+* header
+*/
+
+.header {
+  $this: &;
+  height: 116px;
+  background-color: $white;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding-top: 7px;
+  }
+
+  &__logo {
+    margin-right: 72px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    margin-left: 59px;
+    padding-top: 12px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__social {
+    margin-left: 60px;
+  }
+}

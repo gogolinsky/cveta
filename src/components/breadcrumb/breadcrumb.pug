@@ -1,0 +1,12 @@
+mixin breadcrumb(breadcrumb)
+  ul.breadcrumb
+    li.breadcrumb__item
+      a.breadcrumb__link(href='/index.html', title='Главная') Главная
+      
+    if breadcrumb
+      each item in breadcrumb
+        if item.url
+          li.breadcrumb__item
+            a.breadcrumb__link(href='/' + item.url, title=item.title)=item.title
+        else
+          li.breadcrumb__item=item.title

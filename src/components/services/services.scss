@@ -1,0 +1,33 @@
+/**
+* services
+*/
+
+.services {
+  $this: &;
+
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 53px;
+  margin-bottom: 3px;
+  &__item {
+    position: relative;
+    width: 370px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+  }
+  &.is-portfolio {
+    .services__item {
+      width: 570px;
+    }
+    .service {
+      height: 430px;
+    }
+  }
+  
+ 
+}

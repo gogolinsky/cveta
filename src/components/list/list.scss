@@ -1,0 +1,46 @@
+/**
+* list
+*/
+
+.list {
+  $this: &;
+  background: #FFFFFF;
+  border: 1px solid #E5E8F0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 30px rgba(7, 26, 68, 0.16);
+  width: 190px;
+  padding: 0 16px;
+
+  &__row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & + & {
+      border-top: 1px solid #E5E8F0;
+    }
+  }
+  &__volume {
+     p {
+       margin: 0;
+     }
+  }
+  &__tin {
+    font-size: 17px;
+    font-family: $gilroy;
+    color: $black;
+    font-weight: $semibold;
+  }
+  &__cost {
+    font-size: 14px;
+    font-family: $corsa;
+    color: #6B83DA;
+  }
+  &__quantity {
+    font-size: 15px;
+    font-family: $gilroy;
+    color: $black;
+    font-weight: $semibold;
+  }
+}

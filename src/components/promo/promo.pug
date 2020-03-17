@@ -1,0 +1,20 @@
+//- promo
+
+mixin promo(options = {})
+  .promo
+    .promo__img
+      img(src="img/" + options.img, alt=options.name)
+    .promo__description
+      .promo__title
+        if options.breadcrumb
+        .promo__breadcrumb
+          +breadcrumb(options.breadcrumb)
+        h3.promo__name=options.name
+        p.promo__caption=options.caption
+      .promo__button
+        +button({
+          label: '←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Вернуться к акциям',
+          type:'link',
+        })(
+          class="is-bordered is-promo"
+        )

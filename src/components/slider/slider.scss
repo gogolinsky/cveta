@@ -1,0 +1,89 @@
+/**
+* slider
+*/
+
+.slider {
+  $this: &;
+  &__list {
+    overflow: hidden;
+  }
+  &__inner {
+    position: relative;
+  }
+  &__image {
+    height: 765px;
+    position: relative;
+  }
+  &__img {
+    position: absolute;
+    z-index: -1;
+    height: 765px;
+    width: 100%;
+    background-position: center;
+  }
+  &__wrapper {
+    width: 1000%;
+    overflow: hidden;
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  .slider__arrow {
+    position: absolute;
+    top: 50%;
+    right: 135px;
+  }
+  .slider-button-next,
+  .slider-button-prev {
+    cursor: pointer;
+    outline: none;
+    width: 62px;
+    height: 62px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    background-image: url("/img/arrow-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px 19px;
+    transition: ease all 300ms;
+  }
+  .slider-button-prev {
+    transform: rotate(180deg);
+    margin-top: 18px;
+  }
+
+  &__content {
+    padding-top: 190px;
+  }
+
+  &__headline {
+    font-family: $gilroy;
+    font-size: 42px;
+    color: $black;
+  }
+
+  &__text {
+    font-family: $corsa;
+    font-size: 18px;
+    color: $dark;
+    max-width: 478px;
+    line-height: 1.77;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  &__advantages {
+    position: absolute;
+    bottom: 50px;
+    z-index: 2;
+    width: 1170px;
+    left: calc(50% - 585px);
+  }
+  &.is-roll {
+  }
+}

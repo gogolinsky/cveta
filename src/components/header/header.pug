@@ -1,0 +1,136 @@
+//- header
+
+include /components/logo/logo
+include /components/nav/nav
+include /components/social/social
+include /components/contacts/contacts
+include /components/button/button
+
+mixin header(params)
+  .header
+    .container
+      .header__inner
+        .header__logo
+          +logo(params)
+        .header__nav
+          .header__top
+            +contacts
+            .header__button
+              +button({
+                label: 'Заказать звонок',
+              })(
+                data-modal='callback'
+                class="is-callback"
+              )
+          .header__bottom
+            +nav({
+              items: [
+                {
+                  url: '/catalog.html',
+                  title: 'Каталог',
+                  drop: [
+                    {
+                      title: 'Краски', url: '/paints.html',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                    { title: 'Эмали', url: '#', },
+                    {
+                      title: 'Грунтовки и пропитки', 
+                      url: '#',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                    {
+                      title: 'Лаки', 
+                      url: '#',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                    {
+                      title: 'Декоративные краски и шукатурки', 
+                      url: '#',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                    {
+                      title: 'Декоративный камень и лепнина', 
+                      url: '#',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                    {
+                      title: 'Фотообои и фрески', 
+                      url: '#',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                    {
+                      title: 'Малярный инструмент', 
+                      url: '#',
+                      second: [
+                        { title: 'Интерьерные краски', url: '#'},
+                        { title: 'Фасадные краски', url: '#'},
+                      ]
+                    },
+                  ]
+                },
+                { 
+                  url: '/selection.html', 
+                  title: 'Подбор материала',
+                  drop: [
+                    {title: 'Краски', url: '/painting-wallpaper.html',},
+                    {title: 'Обработка и укрепление бетона', url: '/concrete-processing.html',},
+                    {title: 'Выбор по производителю', url: 'vendor.html',}
+                  ]
+                },
+                { 
+                  url: '/services.html',
+                  title: 'Услуги',
+                  drop: [
+                    {title: 'Компьютерная колеровка краски', url: 'paint-tinting.html',},
+                    {title: 'Помощь в выборе материалов с выездом на дом', url: '#',},
+                    {title: 'Нанесение декоративных покрытий', url: '#',}
+                  ]
+                },
+                { 
+                  url: '/stock.html',
+                   title: 'Акции',amount: '3'
+                },
+                { 
+                  url: '/portfolio.html',
+                  title: 'Портфолио',
+                  drop: [
+                    {title: 'Блог', url: 'blog.html',},
+                  ]
+                },
+                { 
+                  url: '/contacts.html',
+                  title: 'Контакты',
+                  drop: [
+                    {title: 'О нас', url: 'about.html',},
+                  ]
+                },
+              ]
+            })
+            .header__social
+              +social({
+                items: [
+                  { name: 'vk', url: '#' },
+                  { name: 'facebook', url: '#' },
+                  { name: 'instagram', url: '#'},
+                ]
+              })

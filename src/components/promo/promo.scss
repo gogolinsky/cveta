@@ -1,0 +1,40 @@
+/**
+* promo
+*/
+
+.promo {
+  $this: &;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  &__img {
+    display: flex;
+    img {
+    }
+  }
+  &__name {
+    font-size: 42px;
+    font-family: $gilroy;
+    color: $black;
+  }
+  &__caption {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 182%;
+    font-family: $corsa;
+  }
+  &__description {
+    width: 630px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__breadcrumb {
+    margin-bottom: 30px;
+  }
+  .breadcrumb {
+    justify-content: flex-start;
+  }
+
+}

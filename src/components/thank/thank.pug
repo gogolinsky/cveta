@@ -1,0 +1,24 @@
+//- thank
+
+include /components/form/form
+include /components/button/button
+
+mixin thank(options = {})
+  .thank
+    a(href="inex.html").thank__close 
+    .thank__col
+      .thank__background
+        img(src="img/table.png", alt="").thank__img
+    .thank__form
+      span.thank__subtitle Заказ товара
+      h3.thank__title Ваша заявка принята
+      .text
+        p Мы получили вашу заявку и в ближайшее время свяжемся с вами для обсуждения всех деталей.
+        p Благодарим за доверие к «Мастерской Цвета»!
+      .thank__button
+        +button({
+          label: 'Вернуться на главную',
+          type: 'link',
+        })(
+          href="inex.html"
+        )

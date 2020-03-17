@@ -1,0 +1,117 @@
+/**
+* service
+*/
+
+.service {
+  $this: &;
+  position: relative;
+  width: 100%;
+  a {
+    text-decoration: none;
+    color: transparent;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__price {
+    font-size: 20px;
+    color: #656f86;
+    margin: 0;
+    transform: translateY(10px);
+    transition: ease transform 400ms;
+  }
+  &:hover {
+    .service__shadow {
+      opacity: 1;
+    }
+  }
+  &__shadow {
+    box-shadow: 0px 7px 30px rgba(7, 26, 68, 0.3);
+    position: absolute;
+    width: 330px;
+    margin-left: 20px;
+    height: 13px;
+    bottom: 14px;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: ease all 300ms;
+  }
+  &__badge {
+    right: 20px;
+    bottom: 28px;
+    padding: 20px;
+    padding-bottom: 0;
+    border-radius: 5px;
+    width: 330px;
+    position: absolute;
+    -webkit-backdrop-filter: blur(3px);
+    -moz-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    transition: ease all 300ms;
+    line-height: 1;
+    &:hover {
+      .service__link {
+        transform: translateY(-20px);
+      }
+      .service__title {
+        padding: 30px;
+        padding-left: 0px;
+        padding-right: 0;
+        padding-bottom: 11px;
+        transform: translateY(-30px);
+      }
+      .service__price {
+        transform: translateY(-31px);
+      }
+    }
+  }
+
+  &__title {
+    color: $black;
+    font-size: 20px;
+    font-family: $gilroy;
+    font-weight: $semibold;
+    margin: 0;
+    line-height: 130%;
+    transition: ease all 400ms;
+    margin-bottom: 2px;
+    position: relative;
+  }
+  &__link {
+    margin-top: 12px;
+    transition: ease all 500ms;
+    transform: translateY(50px);
+  }
+
+  &.is-roll {
+    .services__item {
+      width: 570px;
+      height: 430px;
+      position: relative;
+    }
+    .service__badge {
+      width: 530px;
+      bottom: 30px;
+    }
+  }
+
+  &.is-stock {
+    .service__badge {
+      background: rgba(22, 57, 147, 0.6);
+    }
+    .service__title {
+      color: $white;
+    }
+    .is-callback {
+      color: #ffb932;
+      font-size: 16px;
+      &::before {
+        background-color: #9fb4ff;
+        opacity: 0.4;
+      }
+    }
+  }
+}

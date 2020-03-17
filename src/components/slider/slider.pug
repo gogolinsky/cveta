@@ -1,0 +1,36 @@
+//- slider
+
+include /components/button/button
+include /components/advantages/advantages
+include /components/advantages/advantages
+
+mixin slider(options = {})
+  .slider.js-slider
+    .slider__inner
+      .slider__container.js-slider-container
+        .slider__wrapper.js-slider-wrapper
+          each item in options.items
+            .slider__image.js-slider-image
+              .container
+                .slider__content  
+                  h2.slider__headline=item.headline
+                  p.slider__text=item.text
+                  .slider__button
+                    +button({
+                      label: 'Подобрать материалы',
+                      type: 'link',
+                    })(
+                      href="/selection.html"
+                      class='is-yellow'
+                    )
+                  .slider__advantages
+                    +advantages({
+                      items:[
+                        { text: 'Разбираемся в краске уже 15 лет', img: 'advantages-1.svg'},
+                        { text: 'Более 1000 довольных клиентов', img: 'advantages-3.svg', className:'is-center'},
+                        { text: 'Покрасили более 10 000 м2', img: 'advantages-2.svg'},
+                      ],
+                    })
+      .slider__arrow
+        .slider-button-next
+        .slider-button-prev

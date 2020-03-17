@@ -1,0 +1,66 @@
+/**
+* about
+*/
+
+.about {
+  $this: &;
+
+  display: flex;
+  align-items: flex-end;
+  // box-shadow: 0px 4px 48px rgba(7, 26, 68, 0.2);
+  margin-bottom: 45px;
+  position: relative;
+  &__shadow {
+    box-shadow: 0px 7px 30px rgba(7, 26, 68, 0.3);
+    position: absolute;
+    width: 80%;
+    margin-left: 100px;
+    height: 13px;
+    bottom: 14px;
+    left: 0;
+    z-index: 0;
+    opacity:1;
+    transition: ease all 300ms;
+  }
+  &__left {
+    width: 670px;
+    z-index: 1;
+    height: 440px;
+    padding: 50px;
+    background-color: $white;
+    position: relative;
+    img {
+      position: absolute;
+      right: -100px;
+      bottom: 0px;
+      z-index: 2;
+    }
+  }
+  &__forall {
+    position: absolute;
+    z-index: 3;
+    left: 43%;
+  }
+  &__img {
+    position: relative;
+    width: 570px;
+    margin-left: -25px;
+    z-index: 1;
+  }
+
+  &__headline {
+    font-size: 34px;
+    font-family: $gilroy;
+  }
+
+  &__text {
+    max-width: 490px;
+    font-size: 18px;
+    font-family: $corsa;
+    line-height: 190%;
+  }
+
+  &__button {
+    margin-top: 43px;
+  }
+}

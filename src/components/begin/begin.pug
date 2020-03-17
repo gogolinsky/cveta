@@ -1,0 +1,16 @@
+//- begin
+
+include /components/button/button
+
+mixin begin(options = {})
+  .begin
+    .begin__info
+      h3.begin__title=options.title
+      p.begin__subtitle=options.subtitle
+      .begin__button
+        +button({
+          label: 'Подобрать материал',
+        })(
+          class='is-yellow'
+        )
+    img(src="img/begin-pattern.png", alt="").begin__img

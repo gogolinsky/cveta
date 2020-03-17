@@ -1,0 +1,37 @@
+//- headline
+
+include /components/breadcrumb/breadcrumb
+
+mixin headline(options)
+  .headline(
+    class=options.className ? options.className : ''
+  )
+    .headline__cover(
+      class=options.className
+      style='background-image: url(/img/' + options.cover + ');'
+    )
+      .container
+        if options.breadcrumb
+          .headline__breadcrumb
+            +breadcrumb(options.breadcrumb)
+        if options.title
+          h1.headline__title!=options.title
+        if options.caption
+          p.headline__caption!=options.caption
+        if options.painting
+          .headline__painting
+            +button({
+              label: 'Выбрать цвет',
+            })(
+              class="is-choice"
+              data-modal="colorPicker"
+            )
+          img(src="/img/table.png", alt="").headline__img
+        if options.brand
+          .headline__brand
+            img(src="img/" + options.brand, alt="").headline__brand-img
+
+    if options.case
+      .headline__case
+        img(src="img/" + options.case, alt="")
+    

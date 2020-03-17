@@ -1,0 +1,27 @@
+//- color-picker
+
+mixin color-picker(options = {})
+  .color-picker
+    .color-picker__header
+      h3.color-picker__title Выбор цвета
+      p.color-picker__subtitle Выберите необходимый оттенок.
+    .color-picker__body
+      ul.color-picker__list
+        each color in options.colors
+          li.color-picker__item.js-picker-color(
+            style="background-color: "+ color.colors + ";"
+          )
+      ul.color-picker__list.js-picker-list.is-color
+        p.color-picker__description Обращаем ваше внимание, что цвета на вашем дисплее скорее всего не будут соответствовать действительности. Для точной колеровки приглашаем вас в гости в нашу студию.
+        each item in options.items
+          li.color-picker__item.js-picker-item(
+            style="background-color: "+ item.color + ";"
+          )
+    .color-picker__footer
+      +button({
+          label: '←&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Назад в портфолио',
+          type: 'link',
+        })(
+          data-modal-close
+          class="is-bordered "
+        )

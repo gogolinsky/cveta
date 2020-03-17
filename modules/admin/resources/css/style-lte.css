@@ -1,0 +1,231 @@
+
+body {
+    overflow-y: scroll;
+}
+
+.wrapper {
+    overflow-y: hidden;
+}
+img {
+    max-width: 100%;
+}
+
+.panel {
+    border: 1px solid #dadada;
+    border-radius: 3px;
+}
+
+/*.panel-heading {
+    background-color: #f5f5f5;
+}*/
+.select2-container .select2-choice {
+    height: 40px !important;
+}
+
+.close {
+    color: #333;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-backdrop {
+    z-index: 1000;
+}
+
+#map {
+    width: 690px;
+    height: 400px;
+    margin-bottom: 15px;
+}
+
+.checkbox-order {
+    margin-top: 35px;
+}
+
+.grid-view th .asc:after {
+    content: '↑';
+}
+
+.grid-view th .desc:after {
+    content: '↓';
+}
+
+.grid-view th .asc:after,
+.grid-view th .desc:after {
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.active>a .badge {
+    background-color: #fff;
+    color: #337ab7;
+}
+
+.single-kartik-image .file-thumbnail-footer {
+    height: 30px!important;
+}
+.single-kartik-image .file-footer-caption{
+    display: none!important;
+}
+
+.single-kartik-image .file-preview-frame {
+    margin: 0!important;
+}
+
+.single-kartik-image .file-drop-zone {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.single-kartik-image .kv-file-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.single-kartik-image .file-preview {
+    padding: 0;
+}
+.single-kartik-image .form-group {
+    width: 228px;
+}
+
+.single-kartik-image .file-drop-zone-title {
+    padding: 70px 10px;
+    height: 204px;
+}
+
+.single-kartik-image .file-preview-status {
+    display: none!important;
+}
+.single-kartik-image {
+    width: 228px;
+    min-height: 285px;
+}
+
+.grid-view img {
+    display: block;
+    max-width: 50px;
+    max-height: 50px;
+    margin: auto;
+}
+
+.grid-view .album-photo img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.input-group-addon {
+    padding: 6px 10px;
+}
+
+.colorlist {
+    padding: 3px 5px;
+    list-style: none;
+    border: 1px solid #d7dce4;
+    border-radius: 18px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.colorlist__item {
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 1px solid #777;
+}
+
+.filters select,
+.filters input,
+.filters .input-group-addon{
+    padding: 3px;
+    font-size: 12px;
+    height: 25px;
+}
+
+.pull-right-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -7px;
+}
+
+.grid-view th .asc:after, .grid-view th .desc:after {
+    position: absolute;
+}
+
+thead {
+    font-size: 12px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 5px;
+}
+
+label {
+    position: relative;
+}
+.kv-loader {
+    margin: -50px;
+}
+
+.krajee-default .file-thumb-progress .progress, .krajee-default .file-thumb-progress .progress-bar {
+    line-height: 11px;
+}
+
+span[data-toggle="modal"]:not(.btn) {
+    color: #3c8dbc;
+    cursor: pointer;
+}
+
+span[data-toggle="modal"]:not(.btn):hover {
+    color: #72afd2;
+}
+
+.nav-tabs-custom>.tab-content {
+    padding: 0;
+}
+
+.nav-stacked .treeview ul a {
+    color: #666;
+}
+
+.nav-stacked .treeview .active>a {
+    color: #444;
+}
+
+.nav-stacked .treeview a:hover {
+    background: #f7f7f7;
+    color: #444;
+}
+
+.row-kartik-images {
+    margin: 0 -5px;
+}
+.row-kartik-images .single-kartik-image {
+    float: left;
+    margin: 0 5px;
+}
+
+.products-list .product-img {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.products-list .product-img img {
+    max-height: 40px;
+    max-width: 50px;
+    width: auto;
+    height: auto;
+}
+
+.box-title * {
+    margin: 0;
+}

@@ -1,0 +1,32 @@
+/**
+* logo
+*/
+
+.logo {
+  $this: &;
+
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: 227px;
+  color: $black;
+
+  &__name {
+    font-family: 'Philosopher';
+    font-weight: $bold;
+    font-size: 27px;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__caption {
+    margin: 0;
+    margin-top: -2px;  
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    font-family: $corsa;
+    color: $accent;
+  }
+}

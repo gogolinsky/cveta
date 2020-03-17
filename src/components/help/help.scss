@@ -1,0 +1,58 @@
+/**
+* help
+*/
+
+.help {
+  $this: &;
+  display: flex;
+  height: 452px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__feed {
+    margin-top: 33px;
+    display: flex;
+    border-radius: 34px;
+    box-shadow: 0px 4px 26px rgba(7, 26, 68, 0.2);
+    background-color: $white;
+    width: 530px;
+  }
+
+  &__input {
+    border-radius: 34px;
+    border: none;
+    width: 470px;
+    padding: 23px;
+    font-size: 16px;
+    color: $black;
+    font-family: $corsa;
+    &::placeholder {
+      font-size: 16px;
+      color: #656F86;
+    } 
+  }
+  &__img {
+    width: 630px;
+    img {
+      margin-left: 70px;
+    }
+  }
+
+  &__headline {
+    font-size: 34px;
+    font-family: $gilroy;
+    max-width: 490px;
+    margin-top: 92px;
+  }
+
+  &__info {
+    font-size: 18px;
+    line-height: 182%;
+    color: $dark;
+    font-family: $corsa;
+    max-width: 490px;
+  }
+  &__button {
+  }
+}

@@ -1,0 +1,39 @@
+/**
+* begin
+*/
+
+.begin {
+  $this: &;
+  align-items: center;
+  padding-bottom: 100px;
+  position: relative;
+  padding-top: 134px;
+
+  &__info {
+    background-color: $white;
+    height: 328px;
+    width: 771px;
+    padding: 50px 60px;
+    box-shadow: 0px 4px 48px rgba(7, 26, 68, 0.2);
+  }
+  &__img {
+
+    position: absolute;
+    right: -200px;
+    bottom: 20px;
+  }
+  &__title {
+    font-family: $gilroy;
+    font-size: 34px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-family: $corsa;
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 480px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+  }
+}

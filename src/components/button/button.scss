@@ -1,0 +1,171 @@
+/**
+* button
+*/
+
+.button {
+  $this: &;
+
+  display: inline-block;
+  padding: 26px 40px 22px;
+  position: relative;
+  z-index: 0;
+  color: $white;
+  border-radius: 34px;
+  background-color: $accent;
+  border: none;
+  font-weight: $semibold;
+  font-style: normal;
+  font-family: $gilroy;
+  font-size: 16px;
+  line-height: 1;
+  vertical-align: top;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  will-change: background-color;
+  transition: ease background-color 300ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color:  #2951B8;
+  }
+
+  &[disabled] {
+    opacity: 0.3 !important;
+    pointer-events: none;
+  }
+
+  &.is-callback {
+    font-weight: $semibold;
+    background: none;
+    color: $accent;
+    font-size: 18px;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    border-radius: 0;
+    border: none;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 7px;
+      background-color: $second;
+      z-index: -1;
+      bottom: 0;
+      left: 0;
+      transition: ease height 300ms;
+    }
+
+    &:hover {
+      &::before {
+        height: 12px;
+      }
+    }
+  }
+
+  &.is-yellow {
+    position: relative;
+    border-radius: 34px;
+    font-size: 17px;
+    font-weight: $semibold;
+    background: none;
+    color: $black;
+    &::before {
+      content: '';
+      z-index: -2;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      background-image: linear-gradient(180deg, #FFCF41 0%, #F6BE1A 100%);
+    } 
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      background-image: linear-gradient(180deg, #FFDC76 0%, #FFCF41 100%);
+      opacity: 0;
+      transition:  ease opacity 300ms;
+    } 
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.is-help {
+    width: 220px;
+    padding: 0;
+    height: 100%;
+  }
+
+  &.is-bordered {
+    background-color: $white;
+    border: 1px solid $yellow;
+    border-radius: 36px;
+    font-size: 17px;
+    color: $black;
+    padding: 26px 47px 21px;
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+  &.is-choice {
+    background-color: $white;
+    color: $black;
+    font-size: 16px;
+    position: relative;
+    width: 212px;
+    text-align: left;
+    border-radius: 5px;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 44px;
+      height: 44px;
+      right: 20px;
+      bottom: 8px;
+      border: 1px solid #E5E8F0;
+      border-radius: 50%;
+      background-image: url('/img/plus.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
+
+  &.is-dis {
+    border: 1px solid #CCD1DD;
+    color: $text;
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  &.is-not {
+    font-family: $corsa;
+    font-weight: $regular !important;
+  }
+  &.is-wide {
+    width: 100%;
+  }
+  &.is-promo {
+    width: 260px;
+    height: 68px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.fz-16 {
+    font-size: 16px;
+  }
+  &.is-selection {
+    padding: 16px 40px;
+  }
+}

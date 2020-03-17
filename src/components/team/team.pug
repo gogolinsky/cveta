@@ -1,0 +1,9 @@
+//- team
+
+include /components/employee/employee
+
+mixin team(options = {})
+  ul.team.grid.is-row
+    each item in options.items
+      li.team__item.col-4
+        +employee(item)

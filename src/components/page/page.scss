@@ -1,0 +1,33 @@
+/**
+* page
+*/
+
+.page {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  min-width: $minwidth;
+  min-height: 100vh;
+  margin: auto;
+  position: relative;
+  z-index: $layer-1;
+  background-color: $white;
+
+  &__header {
+    flex-shrink: 0;
+    background-color: $white;
+    box-shadow: 0px 4px 22px rgba(17, 8, 63, 0.1);
+  }
+
+  &__content,
+  &__footer {
+    flex-grow: 1;
+  }
+
+  &__footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}

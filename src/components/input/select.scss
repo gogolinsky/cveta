@@ -1,0 +1,80 @@
+.select {
+  $this: &;
+  position: relative;
+  display: block;
+  width: 100%;
+  color: $black;
+  font-size: 17px;
+  font-weight: $semibold;
+  font-family: $gilroy;
+  line-height: 1;
+  outline: none !important;
+  border-radius: 5px;
+  height: 60px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  z-index: 2;
+  padding-left: 20px;
+  &__arrow {
+    position: relative;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 11px;
+      right: 1px;
+      bottom: 23px;
+      background-color: $white;
+      background-image: url('/img/arrow-dropmenu.svg');
+      background-repeat: no-repeat;
+      z-index: 3;
+    }
+   
+  }
+
+  .js-init & {
+    opacity: 0;
+  }
+
+  &.is-inited {
+    opacity: 1;
+  }
+
+  &:focus {
+    color: $black;
+    background-color: $white;
+    border-color: $accent;
+  }
+
+
+
+  &.is-time {
+    &::after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 12px;
+      top: calc(50% - 9px);
+      z-index: $layer-10;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      background-image: url('/img/arrow-select.svg');
+    }
+
+    .ss-arrow {
+      display: none;
+    }
+  }
+
+  &:focus {
+    color: $black;
+    background-color: $white;
+    border-color: $yellow;
+  }
+}

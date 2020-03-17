@@ -1,0 +1,164 @@
+//- form
+
+include /components/input/input
+include /components/button/button
+
+mixin form(options)
+  form.form(
+    role='form'
+    action=options.action ? options.action : 'response.html'
+    class=options.className ? options.className : ''
+  )
+
+    case options.type
+
+      when 'callback'
+        .form__body
+          p.form__subtitle Бесплатная консультация
+          h3.form__title Заказать звонок
+          .grid.is-columns.is-wide
+            .col-12
+              label.form__control
+                span.form__label Ваше имя
+                span.form__field
+                  +input(
+                    name='name'
+                    type='text'
+                  )
+            .col-12
+              label.form__control.is-required
+                span.form__label Номер телефона
+                span.form__field
+                  +input(
+                    name='tel'
+                    type='tel'
+                    placeholder='+7 (•••) ••• •• ••'
+                    required
+                  )
+        .form__footer
+          .form__agreement
+            span.form__field
+              +checkbox({
+                label:'Даю согласие на обработку <a href="#" class="button is-callback"> персональных данных</a>'
+              })(
+                name='policy'
+                class='is-agreement'
+                required
+              )
+          .form__button
+            +button({
+              label: 'Позвоните мне',
+            })(
+              class='is-wide is-yellow'
+            )
+
+      when 'product-paints'
+        form(action="").product-card__scope
+          label.product-card__control
+            span.product-card__label Объем
+            span.product-card__field
+              +select({
+                placeholder: ' ',
+                options: [
+                  { label: 'Банка 1л', value: '1' },
+                  { label: 'Банка 2л', value: '2' },
+                ]
+              })
+          label.product-card__control
+            span.product-card__label Расчитать расход
+            span.product-card__field
+              +input(
+                placeholder="Укажите вашу площадь (м²)"
+              )
+          .product-card__button
+            +button({
+              label: 'Сделать заказ',
+            })(
+              data-modal='order'
+              class="is-yellow is-wide"
+            )
+
+      when 'form-ename'
+        form(action="")
+          label.product-card__control
+            span.product-card__label Объем
+            span.product-card__field
+              +select({
+                options: [
+                  { label: 'Банка 1л', value: '1' },
+                  { label: 'Банка 2л', value: '2' },
+                ]
+              })
+          label.product-card__control
+            span.product-card__label Расчитать расход
+            span.product-card__field
+              +input(
+                placeholder="Укажите вашу площадь (м²)"
+              )
+          .product-card__total
+            +total
+          .product-card__button
+            +button({
+              label: 'Сделать заказ',
+            })(
+              class="is-yellow is-wide"
+            )
+
+      when 'form-other'
+        form(action="")
+          label.product-card__control
+            span.product-card__field
+              +select({
+                options: [
+                  { label: 'Банка 1л', value: '1' },
+                  { label: 'Банка 2л', value: '2' },
+                ]
+              })
+          .product-card__button
+            +button({
+              label: 'Сделать заказ',
+            })(
+              class="is-yellow is-wide"
+            )
+
+      when 'order'
+        form(action="")
+          .form__body
+            p.form__subtitle Заказать товар
+            h3.form__title Dulux Diamond Matt
+            .grid.is-columns.is-wide
+              .col-12
+                label.form__control
+                  span.form__label Ваше имя
+                  span.form__field
+                    +input(
+                      name='name'
+                      type='text'
+                    )
+              .col-12
+                label.form__control.is-required
+                  span.form__label Номер телефона
+                  span.form__field
+                    +input(
+                      name='tel'
+                      type='tel'
+                      placeholder='+7 (•••) ••• •• ••'
+                      required
+                    )
+          .form__footer
+            .form__agreement
+              span.form__field
+                +checkbox({
+                  label:'Даю согласие на обработку <a href="#" class="button is-callback"> персональных данных</a>'
+                })(
+                  name='policy'
+                  class='is-agreement'
+                  required
+                )
+            .form__button
+              +button({
+                label: 'Позвоните мне',
+              })(
+                class='is-wide is-yellow'
+              )
+          

@@ -1,0 +1,13 @@
+//- dropmenu
+
+mixin dropmenu(options = {})
+  .dropmenu
+    ul.dropmenu__list
+      each item in options
+        li.dropmenu__item
+          a.dropmenu__link(href=item.url title=item.title)=item.title
+            if item.second
+              img.is-second(src="img/arrow-dropmenu.svg", alt="")
+          if item.second
+            .dropmenu__second
+              +dropmenu(item.second)

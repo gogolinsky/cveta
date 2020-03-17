@@ -1,0 +1,14 @@
+//- services
+
+include /components/service/service
+include /components/pagination/pagination
+
+mixin services(options = {})
+  ul.services(
+    class=options.className
+  )
+    each item in options.items
+      li.services__item
+        +service(item)
+  if options.pagination
+    +pagination(options.pagination)

@@ -1,0 +1,46 @@
+/**
+* breadcrumb
+*/
+
+.breadcrumb {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: #686c90;
+    font-size: 14px;
+    line-height: 1;
+    font-family: $corsa;
+    color: #656F86;
+    &::after {
+      content: '→';  
+      display: block;
+      width: 10px;
+      margin-left: 13px;
+      color: #656F86;
+      opacity: 0.5;
+    }
+
+    & + & {
+      margin-left: 10px;
+    }
+  }
+
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+    transition: ease color 300ms;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}

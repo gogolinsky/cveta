@@ -1,0 +1,29 @@
+//- roll
+
+include /components/services/services
+include /components/news/news
+include /components/arrow/arrow
+
+mixin roll(options = {})
+  .roll.js-roll(
+    class=options.className
+  )
+    .roll__inner
+      .roll__header
+        h3.roll__headline=options.headline
+        .roll__arrow
+          +arrow({
+            className: 'roll-button-prev',
+          })
+          +arrow({
+            className: 'roll-button-next',
+          })
+      .roll__container.js-roll-container
+        .roll__wrapper.js-roll-wrapper
+          each item in options.items
+            .roll__item.js-roll-item
+              case options.type
+                when 'services'
+                  +service(item)
+                when 'gallery'
+                  img(src="img/" + item.img, alt="")

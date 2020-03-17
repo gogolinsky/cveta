@@ -1,0 +1,12 @@
+//- news
+
+include /components/post/post
+include /components/pagination/pagination
+
+mixin news(options = {})
+  ul.news.grid.is-row
+    each item in options.items
+      li.news__item.col-4
+        +post(item)
+  if options.pagination
+    +pagination(options.pagination)

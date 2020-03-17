@@ -1,0 +1,26 @@
+.pika-single {
+  $this: &;
+
+  background-color: #f3f6f8;
+  border: 1px solid #dfeaf2;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(16, 105, 117, 0.08) !important;
+
+  .pika-label {
+    background-color: #f3f6f8;
+  }
+
+  .pika-button {
+    background-color: transparent;
+
+    &:hover {
+      color: $second;
+    }
+  }
+
+  .is-selected .pika-button {
+    box-shadow: none;
+    background-color: $accent;
+    color: $white;
+  }
+}

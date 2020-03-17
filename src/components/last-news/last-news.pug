@@ -1,0 +1,23 @@
+//- last-news
+
+include /components/post/post
+
+mixin last-news(options = {})
+  .last-news.js-last(
+    class=options.className
+  )
+    .last-news__inner
+      .last-news__header
+        h3.last-news__headline=options.headline
+        .last-news__arrow
+          +arrow({
+            className: 'last-button-prev',
+          })
+          +arrow({
+            className: 'last-button-next',
+          })
+      .last-news__container.js-last-container
+        .last-news__wrapper.js-last-wrapper
+          each item in options.items
+            .last-news__item.js-last-item
+              +post(item)

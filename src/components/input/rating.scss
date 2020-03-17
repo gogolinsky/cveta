@@ -1,0 +1,89 @@
+.rating {
+  $this: &;
+
+  width: 100%;
+  line-height: 1;
+
+  &__caption {
+    margin-bottom: 12px;
+    color: $grey;
+    font-family: $font-family2;
+    font-weight: $medium;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  &__field {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  &__label {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+    position: relative;
+    background-image: url('/img/i-star-alt.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -5px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('/img/i-star.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.75;
+      }
+    }
+
+    &:hover ~ & {
+      &::after {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &__field.is-focused + &__label {
+    outline: 2px dashed #86d3ff;
+  }
+
+  &__field:checked ~ &__label::after {
+    background-image: url('/img/i-star.svg');
+    opacity: 1;
+  }
+}

@@ -1,0 +1,197 @@
+/**
+* catalog
+*/
+
+.catalog {
+  $this: &;
+
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 30px;
+  align-items: center;
+
+  &__item {
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    height: 280px;
+  }
+
+  &__link {
+    padding: 20px;
+    padding-top: 20px;
+    display: block;
+    text-decoration: none;
+    background-image: linear-gradient(131.05deg, #EFF6FB 6.71%, #E5EAFC 92.8%); 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    &:hover{
+      .catalog__img {
+        transform: translateY(5px);
+      }
+    }
+  }
+  &__link[data-id='2'],&__link[data-id='3'],&__link[data-id='4'],&__link[data-id='5'],&__link[data-id='7'],&__link[data-id='9'] {
+    .catalog__img {
+      display: none;
+    }
+    width: 100%;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;    height: 200px;
+      width: 200px;
+      background-repeat: no-repeat;
+    }
+  
+    &:hover{
+      &::before {
+        transform: translateX(-5px)
+      }
+      &::after {
+        transform: translateX(10px)
+      }
+    }
+  }
+  &__link[data-id='2'] {
+    &::before {
+      left: 0;
+      transition:ease all 0.2s;
+      background-image: url('/img/category-pattern-11.png');
+      z-index: 1;
+    }
+    &::after {
+      right: -10px;
+      bottom: 40px;
+      transition:ease all 0.5s;
+      background-image: url('/img/category-pattern-9.png');
+    }
+  }
+  &__link[data-id='3'] {
+    &::before {
+      left: 0;
+      transition:ease all 0.2s;
+      background-image: url('/img/category-pattern-3.png');
+      z-index: 1;
+      bottom: -40px;
+    }
+    &::after {
+      right: -5px;
+      transition:ease all 0.5s;
+      background-image: url('/img/category-pattern-4.png');
+    }
+  }
+  &__link[data-id='4'] {
+    &::before {
+      left: 0;
+      bottom: -40px;
+      transition:ease all 0.2s;
+      z-index: 1;
+      background-image: url('/img/category-pattern-12.png');
+    }
+    &::after {
+      right: -50px;
+      transition:ease all 0.5s;
+      background-image: url('/img/category-pattern-10.png');
+    }
+  }
+  &__link[data-id='5'] {
+    &::before {
+      left: 0;
+      transition:ease all 0.2s;
+      background-image: url('/img/category-pattern-1.png');
+    }
+    &::after {
+      right: -10px;
+      transition:ease all 0.5s;
+      background-image: url('/img/category-pattern-2.png');
+    }
+  }
+  &__link[data-id='7'] {
+    &::before {
+      top: 10px;
+      width: 100%;
+      left: -14px;
+      top: 36px;
+      transition:ease all 0.2s;
+      background-image: url('/img/category-pattern-6.png');
+      z-index: 2;
+    }
+    &::after {
+      width: 100%;
+      right: -40px;
+      bottom: -60px;
+      transition:ease all 0.5s;
+      background-image: url('/img/category-pattern-8.png');
+    } 
+    &:hover{
+      &::before {
+        transform: translateX(0px);
+        transform: translateY(5px);
+      }
+      &::after {
+        transform: translateX(0px);
+        transform: translateY(-3px);
+      }
+    }
+  }
+  &__link[data-id='9'] {
+    &::before {
+      width: 100%;
+      left: 10px;
+      bottom: -20px;
+      transition:ease all 0.2s;
+      background-image: url('/img/category-pattern-7.png');
+      z-index: 2;
+    }
+    &::after {
+      width: 100%;
+      right: -80px;
+      transition:ease all 0.5s;
+      background-image: url('/img/category-pattern-5.png');
+    } 
+  }
+
+  &__name {
+    font-size: 20px;
+    font-family: $gilroy;
+    color: $black;
+    margin: 0;
+    line-height: 130%;
+  }
+
+  &__sign {
+    font-size: 14px;
+    font-family: $corsa;
+    margin: 0;
+    color: #6B83DA;
+  }
+
+  &__img {
+    transition: ease all 500ms;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.is-big {
+    margin-bottom: 7px;
+    .catalog__item {
+      max-width: 570px;
+    }
+    .catalog__img {
+      padding: 0 140px;
+      padding-bottom: 32px;
+    }
+  }
+}

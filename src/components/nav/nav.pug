@@ -1,0 +1,19 @@
+//- nav
+
+include /components/dropmenu/dropmenu
+
+mixin nav(options = {})
+  nav.nav
+    ul.nav__list
+      each item in options.items
+        li.nav__item
+          a.nav__link(
+            href=item.url
+            title=item.title
+            data-amount=item.amount ? item.amount : null
+          )=item.title
+            if item.drop
+              img.is-drop(src="img/arrow-dropmenu.svg", alt="")
+          if item.drop
+            .nav__dropmenu
+              +dropmenu(item.drop)

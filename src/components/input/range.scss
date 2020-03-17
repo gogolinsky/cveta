@@ -1,0 +1,72 @@
+.range {
+  $this: &;
+
+  padding-right: 24px;
+
+  &__fields {
+    display: flex;
+    align-items: center;
+  }
+
+  &__field {
+    width: 100%;
+    flex-grow: 1;
+    padding: 12px 0 10px 16px;
+    color: #366099;
+    background-color: rgba(236, 239, 241, 0.5);
+    border: 1px solid #dde5e6;
+    border-radius: 4px;
+    font-family: $font-family;
+    font-weight: $medium;
+    font-size: 15px;
+    line-height: 1;
+    transition: ease 200ms border;
+
+    &:focus {
+      outline: none;
+      border-color: $accent;
+    }
+  }
+
+  &__sep {
+    width: 10px;
+    height: 1px;
+    flex-shrink: 0;
+    margin: 0 12px;
+    background-color: #a4b3b7;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 4px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ui-slider-range {
+    background: #77cab3;
+  }
+
+  .ui-widget {
+    border: none;
+    background-color: #dde5e6;
+  }
+
+  .ui-slider-handle {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #12886c;
+  }
+
+  .ui-state-focus {
+    outline: none;
+  }
+
+  .ui-state-active {
+    background-color: $accent;
+  }
+}

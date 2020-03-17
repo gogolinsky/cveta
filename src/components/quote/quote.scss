@@ -1,0 +1,20 @@
+/**
+* quote
+*/
+
+.quote {
+  $this: &;
+  margin-top: 56px !important;
+  padding-bottom: 60px;
+  &__subtitle {
+    font-size: 16px;
+    font-family: $corsa;
+    color: #6B83DA;
+    margin: 0px;
+    margin-bottom: 17px;
+  }
+  &__title {
+    font-size: 34px;
+    font-family: $gilroy;
+  }
+}

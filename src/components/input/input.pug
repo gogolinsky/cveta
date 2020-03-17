@@ -1,0 +1,91 @@
+mixin input(data)
+  input.input&attributes(attributes)
+
+mixin textarea(data)
+  textarea.textarea(
+    name=data.name
+  )
+
+mixin checkbox(data = {})
+  label.checkbox
+    input.checkbox__input(
+      type='checkbox'
+    )&attributes(attributes)
+    span.checkbox__label!=data.label
+
+mixin checkbox-list(data = {})
+  span.checkbox-list
+    if data.label
+      span.checkbox-list__label=data.label
+    each item in data.list
+      span.checkbox-list__item
+        +checkbox({
+          label: item.label
+        })
+
+mixin radio(name, item)
+  label.radio
+    input.radio__field&attributes(attributes)
+    span.radio__label=item.title
+
+mixin rating(rating)
+  .rating(
+    class=rating.class || ''
+  )
+    .rating__caption=rating.label
+    .rating__inner
+      each i in rating.stars
+        input.rating__field(
+          type='radio'
+          name='rating[' + rating.name + ']' 
+          value=i
+          id=rating.name + '-' + i
+        )
+        label.rating__label(
+          for=rating.name + '-' + i
+        )
+
+mixin select(data)
+  if data.options
+    select.select.js-select(
+      class=data.className
+      data-placeholder=data.placeholder ? data.placeholder : ''
+      data-value-with-placeholder=data.valueWithPlaceholder ? 'true' : ''
+      name=data.name ? data.name : ''
+    )&attributes(attributes)
+      if data.placeholder
+        option(
+          data-placeholder='true'
+        )
+        each option in data.options
+          option(
+            value=option.value
+          )=option.label
+
+
+          
+
+mixin range(data = {})
+  .range.js-range
+    .range__fields
+      input.range__field.js-range-from(
+          type='text'
+          name=data.name + 'From'
+          value=(data.from || '250') + ' ₽'
+        )
+
+      span.range__sep
+
+      input.range__field.js-range-to(
+        type='text'
+        name=data.name + 'To'
+        value=(data.to || '800') + ' ₽'
+      )
+
+    .range__slider.js-range-slider(
+      data-min=data.min || '10', 
+      data-max=data.max || '1000', 
+      data-from=data.from || '250', 
+      data-to=data.to || '800', 
+      data-step=data.step || '5'
+    )

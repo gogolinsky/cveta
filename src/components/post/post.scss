@@ -1,0 +1,56 @@
+/**
+* post
+*/
+
+.post {
+  $this: &;
+  max-width: 370px;
+  width: 100%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E5E8F0;
+  overflow: hidden;
+  &:hover {
+    .post__button {
+      transform: translateY(-15px);
+    }
+    .post__time {
+      transform: translateY(-40px);
+    }
+    .post__title {
+      transform: translateY(-20px);
+    }
+
+  }
+  &__img {
+    height: 230px;
+    overflow: hidden;
+  }
+  &__preview {
+    overflow: hidden;
+    padding: 20px;
+    padding-right: 40px;
+    text-decoration: none;
+  }
+  &__time {
+    font-size: 14px;
+    font-family: $corsa;
+    color:#CCD1DD;
+    transform: translateY(0);
+    display: block;
+    transition: ease all 500ms;
+    line-height: 1;
+  }
+  &__title {
+    margin-top: 9px;
+    font-size: 20px;
+    font-family: $gilroy;
+    transition: ease all 300ms;
+  }
+  &__button {
+    margin-left: -40px;
+    transform: translateY(60px);
+    transition: ease all 500ms;
+  }
+}

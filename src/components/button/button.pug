@@ -1,0 +1,9 @@
+//- button
+mixin button(options)
+  case options.type
+
+    when 'link'
+      a.button.js-button( area-label=options.label )&attributes(attributes)!=options.label
+
+    default
+      button.button.js-button( area-label=options.label )&attributes(attributes)!=options.label

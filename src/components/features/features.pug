@@ -1,0 +1,9 @@
+//- features
+
+include /components/feature/feature
+
+mixin features(options = {})
+  ul.features
+    each item in options.items
+      li.features__item
+        +feature(item)

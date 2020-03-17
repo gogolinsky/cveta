@@ -1,0 +1,260 @@
+/**
+* text
+*/
+
+.text {
+  $this: &;
+
+  color: $dark;
+  font-size: 18px;
+  line-height: 182%;
+  font-family: $corsa;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: 1.2em;
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    color: $accent;
+  }
+
+  b,
+  strong {
+    font-weight: $semibold;
+    color: $accent;
+  }
+
+  a {
+    position: relative;
+    color: $accent;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    margin: 2em 0;
+  }
+
+  ul {
+    margin: 50px 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+
+    li {
+      margin: 12px 0;
+      padding-left: 20px;
+      position: relative;
+      color: $dark;
+      font-size: 20px;
+      line-height: 1.4;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        left: 0;
+        top: 11px;
+        border-radius: 1px;
+        background-color: $accent;
+      }
+    }
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    & + p,
+    & + ul,
+    & + ol {
+      margin-top: 25px;
+    }
+  }
+
+  blockquote,
+  img,
+  p {
+    margin: 1.3em 0;
+
+    &:last-child:first-child {
+      margin: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  i {
+    color: $accent;
+    font-style: normal;
+  }
+
+  ol {
+    counter-reset: order;
+    margin: 40px 0;
+    padding: 0;
+    padding-bottom: 30px;
+    position: relative;
+    list-style: none;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 2px;
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      background-color: $accent;
+    }
+
+    li {
+      max-width: 640px;
+      margin: 20px 0;
+      padding-left: 40px;
+      position: relative;
+      line-height: 1.4;
+      font-size: 15px;
+
+      &::before {
+        content: counter(order);
+        counter-increment: order;
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        border: 1px solid $accent;
+        border-radius: 50%;
+        color: #4a5e6f;
+        font-size: 13px;
+        line-height: 24px;
+        text-align: center;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  blockquote {
+    margin: 1.3em 0;
+    position: relative;
+    color: $black;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.4;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid $grey;
+
+    p {
+      margin: 5px 0;
+    }
+
+    thead {
+      td,
+      th {
+        padding: 15px 20px;
+        color: #686c90;
+        font-size: 11px;
+        line-height: 1;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        text-align: left;
+      }
+    }
+
+    tbody {
+      td,
+      th {
+        padding: 15px 20px;
+        color: $dark;
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.68;
+
+        &:first-child {
+          font-weight: $medium;
+        }
+
+        &:not(:first-child) {
+          color: #686c90;
+        }
+      }
+
+      td:nth-child(2) ~ td {
+        border-left: 1px solid #e4e8f4;
+      }
+
+      tr {
+        border-top: 1px solid $grey;
+        vertical-align: top;
+
+        &:nth-child(even) {
+          background-color: #f4f6fb;
+        }
+      }
+    }
+  }
+  &.is-guarantees {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  &.is-post {
+    p,h3,blockquote {
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+    img {
+      max-width: 970px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    blockquote {
+      color: $accent;
+      font-size: 22px;
+      font-weight: $medium;
+      margin-left: 30px ;
+      position: relative;
+      margin-bottom: 70px;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 150px;
+        height: 100%;
+        width: 2px;
+        background-color:  #FFB932;
+      }
+    }
+  }
+}

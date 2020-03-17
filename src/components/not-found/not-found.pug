@@ -1,0 +1,15 @@
+//- not-found
+
+include /components/button/button
+
+mixin not-found(options = {})
+  .not-found
+    h3.not-found__headline Страница не найдена
+    .not-found__button
+      +button({
+        label: 'Перейти на главную',
+        type: 'link',
+      })(
+        class="is-not"
+        href="index.html"
+      )

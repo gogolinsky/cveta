@@ -1,0 +1,21 @@
+//- vendors
+
+include /components/vendor/vendor
+include /components/button/button
+
+mixin vendors(options = {})
+  ul.vendors(
+    class=options.className
+  )
+    each item in options.items
+      li.vendors__item
+        +vendor(item)
+  if options.button
+    .vendors__button
+      +button({
+        label: 'Выбрать по производителю',
+        type: 'link',
+      })(
+        class="is-bordered"
+        href="/vendor.html"
+      )

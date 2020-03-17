@@ -1,0 +1,35 @@
+//- more
+
+include /components/date/date
+
+mixin more(options = {})
+  if options.date
+    +date({
+      text: 'Мастерская цвета “Краски”  принимала участие в дизайне одной из самых популярных пиццерий в городе Смоленске.',
+      time: '06 мая 2015',
+    })
+  .more.grid.is-row(
+    class=options.className
+  )
+    .more__left.col-4
+      if options.subtitle
+        p.more__subtitle=options.subtitle
+      h3.more__title=options.title
+      if options.order
+        .more__order
+          p.more__caption Стоимость:
+          p.more__cost=options.order
+      if options.desciption
+        p.more__description=options.desciption
+    .more__right.col-8
+      ul.more__list
+        each item in options.items
+          li.more__item=item.item
+    if options.table
+      .more__costs.col-10.shift-1
+        table.more__table
+          caption.more__headline Стоимость колеровки
+          each value, label in options.table
+            tr.more__table-row
+              td.more__table-col=label
+              td.more__table-col=value

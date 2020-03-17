@@ -1,0 +1,92 @@
+.checkbox {
+  $this: &;
+
+  display: inline-flex;
+  width: 120%;
+  align-items: baseline;
+  justify-content: space-between;
+  position: relative;
+  color: $text;
+  font-weight: $medium;
+  font-family: $corsa;
+  font-style: normal;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+
+  &.is-disabled {
+    cursor: default;
+
+    #{$this}__label {
+      opacity: 0.8;
+    }
+  }
+
+  &__input {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    opacity: 0;
+  }
+
+  &__label {
+    display: block;
+    padding-left: 22px;
+    position: relative;
+    color: currentColor;
+    line-height: 1.3;
+    &::after {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 4px;
+      left: 0;
+      border-radius: 2px;
+      background-color: transparent;
+      border: 1px solid #b7bbe2;
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 23px;
+      height: 9px;
+      position: absolute;
+      top: 6px;
+      left: 1px;
+      border-radius: 1px;
+      background-image: url("/img/check.svg");
+      background-position: 2px center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity $ease 300ms;
+      z-index: 2;
+    }
+    a {
+      color: $accent;
+      text-decoration: none;
+      transition: color ease 300ms;
+    }
+  }
+
+  &__amount {
+    margin-left: 25px;
+    color: #686c90;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  &__input:checked + &__label::before {
+    opacity: 1;
+  }
+
+  &__input.is-focused + &__label::after {
+    outline: 2px dashed #86d3ff;
+  }
+}

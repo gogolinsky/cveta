@@ -1,0 +1,18 @@
+//- post
+
+include /components/button/button
+
+mixin post(options = {})
+  .post
+    img(src="img/" + options.img, alt=options.title).post__img
+    a(href=options.link).post__preview
+      time.post__time=options.date
+      h3.post__title=options.title
+      .post__button  
+        +button({
+          label: 'Подробнее',
+          type: 'link',
+        })(
+          href=options.link
+          class="is-callback"
+        )

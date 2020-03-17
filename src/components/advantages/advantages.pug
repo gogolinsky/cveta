@@ -1,0 +1,14 @@
+//- advantages
+
+mixin advantages(options = {})
+  .advantages
+    ul.advantages__list
+      each item in options.items
+        li.advantages__item(
+          class=item.className
+        )
+          img(
+            src='img/' + item.img, 
+            alt=item.text
+            ).advantages__img
+          p.advantages__text=item.text

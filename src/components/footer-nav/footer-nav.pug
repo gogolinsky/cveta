@@ -1,0 +1,7 @@
+//- footer-nav
+
+mixin footer-nav(options = {})
+  ul.footer-nav
+    each item in options.items
+      li.footer-nav__item 
+        a(href="").footer-nav__link=item.link

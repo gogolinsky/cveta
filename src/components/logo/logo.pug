@@ -1,0 +1,14 @@
+//- logo
+
+mixin logo(params)
+  if params.id == 1
+    .logo&attributes(attributes) 
+      p.logo__name Мастерская Цвета
+      span.logo__caption салон-студия красок
+  else
+    a.logo(
+      href='/'
+      title='Главная страница'
+    )&attributes(attributes) 
+      p.logo__name Мастерская Цвета
+      span.logo__caption салон-студия красок

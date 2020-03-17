@@ -1,0 +1,16 @@
+//- section
+
+mixin section(options = {})
+  section.section(
+    id=options.id ? options.id : null
+    class=options.className ? options.className : ''
+  )
+    .container
+      if options.title
+        header.section__header
+          h2.section__title!=options.title
+          if options.caption
+            p.section__caption!=options.caption
+      if block
+        .section__body
+          block

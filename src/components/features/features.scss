@@ -1,0 +1,19 @@
+/**
+* features
+*/
+
+.features {
+  $this: &;
+
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -25px;
+  margin-top: 5px;
+  &__item {
+    margin-left: 60px;
+    margin-bottom: 30px;
+  }
+
+}

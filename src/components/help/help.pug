@@ -1,0 +1,17 @@
+//- help
+
+mixin help(options = {})
+  .help
+    .help__form
+      h3.help__headline=options.headline
+      p.help__info=options.info
+      form.help__feed
+        input(type="phone", name="", placeholder="Ваш номер телефона", required).help__input
+        .help__button
+          +button({
+            label: 'Позвоните мне',
+          })(
+            class='is-yellow is-help'
+          )
+    .help__img
+      img(src="img/help.png", alt="")
