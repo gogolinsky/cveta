@@ -38,7 +38,7 @@
         "yii2tech/ar-linkmany": "^1.0",
         "kartik-v/yii2-widget-datetimepicker": "dev-master",
         "aki/yii2-vue": "*",
-        "enshrined/svg-sanitize": "^0.10.0"
+        "enshrined/svg-sanitize": "^0.13.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0"
